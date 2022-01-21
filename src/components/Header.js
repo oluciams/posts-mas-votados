@@ -1,13 +1,18 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 export const Header = () => {
    
 return (    
-  <>
-    <h3 className='text-center mt-2'>Titlo</h3>
-
-  </>                                   
+  
+  <Container fluid>
+    <Row>
+      <Col>
+        <h3 className='text-center'>Blog posts populares</h3>
+      </Col>
+    </Row>
+  </Container>                                    
     
   )
 }
