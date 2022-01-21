@@ -14,7 +14,7 @@ export const CardPost = ({
 
   return (
 
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '540px'}}>
       <Card.Img variant="top" src={cardImage} style={{ width: '12rem' }}/>
       <Card.Body>
         <Card.Title>{cardTitle}</Card.Title>
