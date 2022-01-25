@@ -12,7 +12,7 @@ export const Posts = () => {
     return (                
         <Row>  
             {                
-                data.map(({ id, title, description, votes, writer_avatar_url, post_image_url}) =>  
+                data.map(({ id, title, description, votes, writer_avatar_url, post_image_url, url}) =>  
                 <CardPost
                  key={id}                  
                  cardTitle={title}
@@ -20,6 +20,7 @@ export const Posts = () => {
                  cardWriter={writer_avatar_url}
                  cardVotes={votes}
                  cardImage={post_image_url}
+                 cardUrl={url}
                  />                              
                 )
             }               

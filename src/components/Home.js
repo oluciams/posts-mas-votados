@@ -10,8 +10,8 @@ return (
   <div className="container">
     
     <div className="row">
-      <div className="col">
-        <h1 className='text-center '>Blog posts populares</h1>
+      <div className="col ">
+        <h2>Blog posts populares</h2>        
       </div>
     </div>  
 
