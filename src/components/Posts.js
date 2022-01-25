@@ -4,9 +4,7 @@ import { CardPost } from './CardPost';
 import data from '../data'
 
 
-export const Posts = () => {
-
-  
+export const Posts = () => { 
     
 
    if(!data) return <h3>Loading . . . </h3>
