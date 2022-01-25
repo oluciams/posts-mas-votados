@@ -15,12 +15,12 @@ return (
       </div>
     </div>  
 
-    <section>
+    <section className="mt-4 mb-3">
       <div className="row">
-        <div className="col d-flex flex-row">
-          <p>Orden:</p>
-          <button type="button" className="btn btn-outline-primary">Ascendente</button>
-          <button type="button" className="btn btn-primary">Desendente</button>           
+        <div className="col">
+          <p className="d-inline-block">Orden:</p>
+          <button type="button" className="btn btn-outline-primary ms-2">Ascendente</button>
+          <button type="button" className="btn btn-primary ms-2">Desendente</button>           
         </div>
       </div>
     </section>

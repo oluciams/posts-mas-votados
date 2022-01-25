@@ -14,32 +14,35 @@ export const CardPost = ({
 
   return (
 
-    <Card style={{ width: '540px'}}>
-      <Card.Img variant="top" src={cardImage} style={{ width: '12rem' }}/>
-      <Card.Body>
-        <Card.Title>{cardTitle}</Card.Title>
-        <Card.Text>{cardDescription}</Card.Text>
-        <Card.Text>{cardVotes}</Card.Text>
-        <Card.Img variant="bottom" src={cardWriter} style={{ width: '5rem' }}/>    
-        <Button variant="primary">divide</Button>
-      </Card.Body>
-    </Card>
-
-    // <div className="card mx-auto my-3" style={{ width: '18rem'}}>
-    //   <div className="row g-0">
-    //     <div className="col-md-3">
-    //       <img src={cardImage} className=" card-img img-fluid rounded-start" alt="imagen-post" style={{ width: '12rem'}}></img>
-    //     </div>
-    //     <div className="col-md-8">
-    //       <div className="card-body">
-    //         <h5 className="card-title">{cardTitle}</h5>
-    //         <p className="card-text">{cardDescription}</p>
-    //          <p className="card-text">{cardVotes}</p>
-    //          <img src={cardWriter} className="img-fluid rounded-start" alt="imege-writer" style={{ width: '6 rem'}}></img>            
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>       
+    // <Card style={{ width: '540px'}}>
+    //   <Card.Img variant="top" src={cardImage} style={{ width: '12rem' }}/>
+    //   <Card.Body>
+    //     <Card.Title>{cardTitle}</Card.Title>
+    //     <Card.Text>{cardDescription}</Card.Text>
+    //     <Card.Text>{cardVotes}</Card.Text>
+    //     <Card.Img variant="bottom" src={cardWriter} style={{ width: '5rem' }}/>    
+    //     <Button variant="primary">divide</Button>
+    //   </Card.Body>
+    // </Card>
+    <div className="row"> 
+      <div className="col"> 
+        <div className="card mx-auto my-3" style={{ width: '18rem'}}>
+          <div className="row g-0">
+            <div className="col-md-3">
+              <img src={cardImage} className=" card-img img-fluid rounded-start" alt="imagen-post" style={{ width: '16rem'}}></img>
+            </div>
+            <div className="col-md-9">
+              <div className="card-body">
+                <h5 className="card-title">{cardTitle}</h5>
+                <p className="card-text">{cardDescription}</p>
+                <p className="card-text">{cardVotes}</p>
+                <img src={cardWriter} className="img-fluid rounded-start" alt="imege-writer" style={{ width: '6 rem'}}></img>            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>       
 
   )
 } 
