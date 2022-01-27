@@ -5,6 +5,8 @@ import data from '../data'
 
 
 export const Posts = () => { 
+
+    data.sort((a,b)=> {return a.votes-b.votes})
     
 
    if(!data) return <h3>Loading . . . </h3>
@@ -24,6 +26,11 @@ export const Posts = () => {
                  />                              
                 )
             }               
+            {/* {data.map(({votes})=> <ul>
+                <li>{votes}</li>
+                </ul>)
+            } */}
+            
          </Row>  
     )
 }

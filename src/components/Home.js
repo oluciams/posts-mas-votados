@@ -1,4 +1,5 @@
 import React from 'react';
+import { Increment } from './Increment';
 // import { Container, Row, Col } from 'react-bootstrap';
 import { Posts } from './Posts';
 
@@ -20,9 +21,10 @@ return (
         <div className="col">
           <p className="d-inline-block">Orden:</p>
           <button type="button" className="btn btn-outline-primary ms-2">Ascendente</button>
-          <button type="button" className="btn btn-primary ms-2">Desendente</button>           
+          <button type="button" className="btn btn-primary ms-2">Desendente</button>          
         </div>
       </div>
+      {/* <Increment/> */}
     </section>
 
     <section>
