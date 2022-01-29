@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Increment } from './Increment';
 import { Posts } from './Posts';
 import data from '../data'
 
@@ -47,12 +46,11 @@ return (
           </button> 
                    
         </div>
-      </div>
-      <Increment/>
+       </div>      
     </section>
 
     <section>
-      <Posts/>
+      <Posts orderArray={orderArray}/>
     </section>
 
   </div>                                    
