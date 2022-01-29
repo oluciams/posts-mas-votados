@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Increment } from './Increment';
-// import { Container, Row, Col } from 'react-bootstrap';
 import { Posts } from './Posts';
+import data from '../data'
 
 
 export const Home = () => {
+
+  const [orderArray, setOrderArray] = useState([...data]);
+
+	useEffect(() => {
+
+		const organizeAsc = [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+		setOrderArray(organizeAsc)		
+	}, []);
+    
    
 return (    
   
@@ -20,11 +29,26 @@ return (
       <div className="row">
         <div className="col">
           <p className="d-inline-block">Orden:</p>
-          <button type="button" className="btn btn-outline-primary ms-2">Ascendente</button>
-          <button type="button" className="btn btn-primary ms-2">Desendente</button>          
+
+          <button type="button" className="btn btn-outline-primary ms-2" 
+            onClick={()=>{
+              let newOrderAsc= [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+              setOrderArray(newOrderAsc)}
+            }
+          >Ascendente
+          </button>
+
+          <button type="button" className="btn btn-outline-primary ms-2" 
+            onClick={()=>{
+              let newOrderDes= [...orderArray].sort((b,a)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+              setOrderArray(newOrderDes)}
+            }
+            >Desendente
+          </button> 
+                   
         </div>
       </div>
-      {/* <Increment/> */}
+      <Increment/>
     </section>
 
     <section>

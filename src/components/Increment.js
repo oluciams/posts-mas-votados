@@ -1,54 +1,67 @@
-import React, { useState } from 'react';
-import data from '../data';
+import React, { useEffect, useState } from 'react';
+import data1 from '../data1';
 
-export const Increment = ()=> {
+export const Increment = ()=> {   
 
-  
-  const [value, setValue] = useState(0)
+  const [buttonDes, setButtonDes] = useState([...data1])  
+   
 
-  const data1 = [
-    {
-      id: 1,
-      title: 'Manejo de dependencias en Ruby con Bundler',      
-      votes: 52      
-    },
-    {
-      id: 2,
-      title: 'Descubre si Make it Real es para ti',      
-      votes: 43      
-    },
-    {
-      id: 3,
-      title: '¿Qué es código?',      
-      votes: 144      
-    },
-    {
-      id: 4,
-      title: 'Aprende Desarrollo Web gratis',      
-      votes: 245      
-    },
-    {
-      id: 5,
-      title: 'Desarrollo Web gratis',      
-      votes: 1      
-    }
-  ]
-  
-    data1.sort((a,b)=> {return a.votes-b.votes})
+  useEffect(() => {
+
+    const descendente = [...buttonDes].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+    setButtonDes(descendente)
     
+  }, []);
   
-  
+   
 
   return (
-    <div>  
-
-        <span className="value">{value}</span>
-        <button onClick={()=>setValue(value + 1)} id="inc"><i type= "btn" class="bi bi-caret-up"></i>Incrementa<i class="bi bi-caret-down"></i></button>
-        <button onClick={()=>setValue(value - 1)} id="inc">Decrementa</button>
-        <p> este es el arreglo con el metodo sort,</p>
-      </div>
+    <div>          
+        
+        {/* <button onClick={()=>setValue(value + 1)} id="inc">Incrementa</button> */} 
+        <button 
+          onClick={()=>{
+            let newDesendente = [...buttonDes].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+            // if (newDesendente[0] === buttonDes[0])
+            //   newDesendente = [...buttonDes].sort((b,a)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+            setButtonDes(newDesendente) 
+            
+            // let newDesendente = [...buttonDes].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+            // if (newDesendente[0] === buttonDes[0])
+            //   newDesendente = [...buttonDes].sort((b,a)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+            // setButtonDes(newDesendente)   
+          } }
+          >
+          Incrementa
+          </button>
+          <button 
+          onClick={()=>{
+            let newDesendente = [...buttonDes].sort((b,a)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+            // if (newDesendente[0] === buttonDes[0])
+            //   newDesendente = [...buttonDes].sort((b,a)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+            setButtonDes(newDesendente) 
+            
+            // let newDesendente = [...buttonDes].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+            // if (newDesendente[0] === buttonDes[0])
+            //   newDesendente = [...buttonDes].sort((b,a)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+            // setButtonDes(newDesendente)   
+          } }
+          >
+          Decrementa
+          </button>
+          <ul>
+            {
+              buttonDes.map((el=> (
+              <li>
+                {el.votes}
+              </li>
+              )))              
+            }
+             
+            </ul>   
+                
+    </div>
   )
-
 } 
 
 
