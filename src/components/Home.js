@@ -6,13 +6,16 @@ import data from '../data'
 export const Home = () => {
 
   const [orderArray, setOrderArray] = useState([...data]);
+  const [buttonToggle, setbuttonToggle] = useState(true);
+  
 
 	useEffect(() => {
 
 		const organizeAsc = [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
 		setOrderArray(organizeAsc)		
 	}, []);
-    
+  
+  
    
 return (    
   
@@ -29,18 +32,21 @@ return (
         <div className="col">
           <p className="d-inline-block">Orden:</p>
 
-          <button type="button" className="btn btn-outline-primary ms-2" 
+          <button type="button" className={`btn btn-outline-primary ms-2 ${buttonToggle ? "active" : ""}`}
             onClick={()=>{
               let newOrderAsc= [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
-              setOrderArray(newOrderAsc)}
+              setOrderArray(newOrderAsc)              
+              }
             }
           >Ascendente
           </button>
 
-          <button type="button" className="btn btn-outline-primary ms-2" 
+          <button type="button" className={`btn btn-outline-primary ms-2 ${buttonToggle ? "" : "active"}`} 
             onClick={()=>{
               let newOrderDes= [...orderArray].sort((b,a)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
-              setOrderArray(newOrderDes)}
+              setOrderArray(newOrderDes)
+              setbuttonToggle(false)
+              }
             }
             >Desendente
           </button> 
