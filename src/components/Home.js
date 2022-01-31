@@ -6,16 +6,42 @@ import data from '../data'
 export const Home = () => {
 
   const [orderArray, setOrderArray] = useState([...data]);
-  const [buttonToggle, setbuttonToggle] = useState(true);
-  
+  const [buttonToggle, setbuttonToggle] = useState(true);  
+
+   
+
+	const addVote = (id) => {
+
+    let copyOrderArray = [...orderArray]
+    let newCopyOrderArray = copyOrderArray.map((post)=>{
+      if(post.id===id){
+        post.votes += 1           
+      }
+      return post      
+    }) 
+
+    setOrderArray(newCopyOrderArray)
+	}
+
+	const subtractVote = (id) => {
+    let copyOrderArray = [...orderArray]
+    let newCopyOrderArray = copyOrderArray.map((post)=>{
+      if(post.id===id){
+        post.votes -= 1           
+      }
+      return post      
+    }) 
+
+    setOrderArray(newCopyOrderArray)		
+   
+	}
+
 
 	useEffect(() => {
 
 		const organizeAsc = [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
 		setOrderArray(organizeAsc)		
-	}, []);
-  
-  
+	}, []);  
    
 return (    
   
@@ -56,7 +82,10 @@ return (
     </section>
 
     <section>
-      <Posts orderArray={orderArray}/>
+      <Posts orderArray={orderArray}
+             addVote={addVote}
+             subtractVote={subtractVote}             
+             />
     </section>
 
   </div>                                    

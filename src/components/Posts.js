@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Row } from 'react-bootstrap';
 import { CardPost } from './CardPost';
 
 
-export const Posts = ({orderArray}) => { 	
+export const Posts = ({orderArray, addVote, subtractVote}) => { 	    
+	
 
    if(!orderArray) return <h3>Loading . . . </h3>
 
@@ -12,13 +13,16 @@ export const Posts = ({orderArray}) => {
             {                
 							orderArray.map(({ id, title, description, votes, writer_avatar_url, post_image_url, url}) =>  
 							<CardPost
-								carKey={id}                  
+							                 
 								cardTitle={title}
 								cardDescription={description}
 								cardWriter={writer_avatar_url}
 								cardVotes={votes}
 								cardImage={post_image_url}
 								cardUrl={url}
+								id={id}
+								addVote={addVote}
+								subtractVote={subtractVote}
 								/>                              
 							)
             }        
