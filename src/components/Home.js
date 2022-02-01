@@ -19,6 +19,9 @@ export const Home = () => {
     }) 
 
     setOrderArray(newCopyOrderArray)
+    let newOrderAsc= [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+      setOrderArray(newOrderAsc)
+
 	}
 
 	const subtractVote = (id) => {
@@ -30,6 +33,8 @@ export const Home = () => {
       return post      
     }) 
     setOrderArray(newCopyOrderArray)   
+    let newOrderDes= [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+      setOrderArray(newOrderDes)
 	}
 
   const orderUpward = ()=>{
