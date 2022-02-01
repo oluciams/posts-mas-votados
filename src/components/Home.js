@@ -59,16 +59,18 @@ export const Home = () => {
 return (    
   
   <div className="container">
-    
-    <div className="row">
-      <div className="col ">
-        <h2>Blog posts populares</h2>        
-      </div>
-    </div>  
 
-    <section className="mt-4 mb-3">
-      <div className="row">
-        <div className="col">
+    <section>
+      <div className="row d-flex justify-content-center">
+        <div className="col-md-8 ">
+          <h2>Blog posts populares</h2>        
+        </div>
+      </div> 
+    </section> 
+
+    <section>
+      <div className="row mt-4 mb-4 justify-content-center">
+        <div className="col-md-8">
           <p className="d-inline-block">Orden:</p>
 
           <button type="button" className={`btn btn-outline-primary ms-2 ${buttonToggle ? "active" : ""}`}
@@ -79,8 +81,7 @@ return (
           <button type="button" className={`btn btn-outline-primary ms-2 ${buttonToggle ? "" : "active"}`} 
             onClick={()=> orderFalling()}
             >Desendente
-          </button> 
-                   
+          </button>                    
         </div>
        </div>      
     </section>
