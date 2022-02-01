@@ -2,7 +2,7 @@ import React from 'react';
 
 
 export const CardPost = ({         
- 
+  
   cardTitle,
   cardDescription,
   cardWriter,
@@ -17,7 +17,7 @@ export const CardPost = ({
   return (
     
     <div className="row" key={id}>
-      <div className="col d-flex flex-row justify-content-center">        
+      <div className="col d-flex flex-row justify-content-center" >        
         <div className="col-md-3">
           <img src={cardImage} className="img-fluid rounded-start" alt="imagen-post" style= {{width:'90%', height:'60%'}}></img>
         </div>
