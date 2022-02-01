@@ -61,7 +61,8 @@ return (
           <button type="button" className={`btn btn-outline-primary ms-2 ${buttonToggle ? "active" : ""}`}
             onClick={()=>{
               let newOrderAsc= [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
-              setOrderArray(newOrderAsc)              
+              setOrderArray(newOrderAsc)
+              setbuttonToggle(true)             
               }
             }
           >Ascendente

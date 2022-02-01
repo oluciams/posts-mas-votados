@@ -34,16 +34,7 @@ const data = [
     votes: 45,
     writer_avatar_url: '//a.disquscdn.com/uploads/users/2864/1155/avatar92.jpg?1481303405',
     post_image_url: 'http://blog.makeitreal.camp/assets/images/bg-images/aprende-desarrollo-web-bg.png',
-  },
-  {
-    id: 5,
-    title: 'Aprende Desarrollo Web gratis',
-    description: '¿Quieres iniciar en el mundo del desarrollo Web y no sabes por dónde empezar? Conoce Aprende Desarrollo Web, un curso completamente gratis dirigido a personas sin experiencia en el que aprenderás a crear y publicar sitios interactivos en Internet con HTML, CSS y JavaScript.',
-    url: 'http://blog.makeitreal.camp/aprende-desarrollo-web-gratis/',
-    votes: 50,
-    writer_avatar_url: '//a.disquscdn.com/uploads/users/2864/1155/avatar92.jpg?1481303405',
-    post_image_url: 'http://blog.makeitreal.camp/assets/images/bg-images/aprende-desarrollo-web-bg.png',
-  },
+  } 
 ]
 
 export default data
