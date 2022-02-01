@@ -6,9 +6,7 @@ import data from '../data'
 export const Home = () => {
 
   const [orderArray, setOrderArray] = useState([...data]);
-  const [buttonToggle, setbuttonToggle] = useState(true);  
-
-   
+  const [buttonToggle, setbuttonToggle] = useState(true);     
 
 	const addVote = (id) => {
 
@@ -31,10 +29,20 @@ export const Home = () => {
       }
       return post      
     }) 
-
-    setOrderArray(newCopyOrderArray)		
-   
+    setOrderArray(newCopyOrderArray)   
 	}
+
+  const orderUpward = ()=>{
+    let newOrderAsc= [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+      setOrderArray(newOrderAsc)
+      setbuttonToggle(true) 
+  }
+
+  const orderFalling = ()=>{
+    let newOrderDes= [...orderArray].sort((b,a)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+      setOrderArray(newOrderDes)
+      setbuttonToggle(false)   
+  }
 
 
 	useEffect(() => {
@@ -59,22 +67,12 @@ return (
           <p className="d-inline-block">Orden:</p>
 
           <button type="button" className={`btn btn-outline-primary ms-2 ${buttonToggle ? "active" : ""}`}
-            onClick={()=>{
-              let newOrderAsc= [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
-              setOrderArray(newOrderAsc)
-              setbuttonToggle(true)             
-              }
-            }
+            onClick={()=> orderUpward()}
           >Ascendente
           </button>
 
           <button type="button" className={`btn btn-outline-primary ms-2 ${buttonToggle ? "" : "active"}`} 
-            onClick={()=>{
-              let newOrderDes= [...orderArray].sort((b,a)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
-              setOrderArray(newOrderDes)
-              setbuttonToggle(false)
-              }
-            }
+            onClick={()=> orderFalling()}
             >Desendente
           </button> 
                    

@@ -19,7 +19,7 @@ export const CardPost = ({
     <div className="row" key={id}>
       <div className="col d-flex flex-row justify-content-center">        
         <div className="col-md-3">
-          <img src={cardImage} className="img-fluid rounded-start" alt="imagen-post" style= {{width:'100%', height:'60%'}}></img>
+          <img src={cardImage} className="img-fluid rounded-start" alt="imagen-post" style= {{width:'90%', height:'60%'}}></img>
         </div>
 
         <div className="col-md-2 text-center">          
