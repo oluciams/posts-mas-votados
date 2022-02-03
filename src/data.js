@@ -16,7 +16,7 @@ const data = [
     votes: 43,
     writer_avatar_url: '//a.disquscdn.com/uploads/users/2864/1155/avatar92.jpg?1481303405',
     post_image_url: 'http://blog.makeitreal.camp/assets/images/bg-images/laptop-sublime.jpg',
-  },
+  },  
   {
     id: 3,
     title: '¿Qué es código?',
@@ -34,7 +34,7 @@ const data = [
     votes: 45,
     writer_avatar_url: '//a.disquscdn.com/uploads/users/2864/1155/avatar92.jpg?1481303405',
     post_image_url: 'http://blog.makeitreal.camp/assets/images/bg-images/aprende-desarrollo-web-bg.png',
-  } 
+  }  
 ]
 
 export default data
