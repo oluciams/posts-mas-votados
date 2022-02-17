@@ -11,26 +11,16 @@ export const Home = () => {
  
 	const addVote = (id) => {
     let copyOrderArray = [...orderArray]
-    let newCopyOrderArray = copyOrderArray.map((post)=>{
-      if(post.id===id){
-        post.votes += 1           
-      }
-      return post      
-    })     
-    setOrderArray(newCopyOrderArray)
-    buttonToggle ? orderUpward() : orderFalling()    
+    let newCopyOrderArray = copyOrderArray.map((post)=>{if(post.id===id){post.votes += 1} return post })     
+      setOrderArray(newCopyOrderArray)
+      buttonToggle ? orderUpward() : orderFalling()    
 	}
 
 	const subtractVote = (id) => {
     let copyOrderArray = [...orderArray]
-    let newCopyOrderArray = copyOrderArray.map((post)=>{
-      if(post.id===id){
-        post.votes -= 1           
-      }
-      return post      
-    }) 
-    setOrderArray(newCopyOrderArray)
-    buttonToggle ? orderUpward() : orderFalling()
+    let newCopyOrderArray = copyOrderArray.map((post)=>{if(post.id===id){post.votes -= 1} return post}) 
+      setOrderArray(newCopyOrderArray)
+      buttonToggle ? orderUpward() : orderFalling()
    
 	}
 
@@ -50,7 +40,7 @@ export const Home = () => {
 
 	useEffect(() => {
 		const organizeAsc = [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
-		setOrderArray(organizeAsc)		
+		  setOrderArray(organizeAsc)		
 	}, []);  
    
 return (    
@@ -84,10 +74,10 @@ return (
     </section>
 
     <section>
-      <Posts orderArray={orderArray}
-             addVote={addVote}
-             subtractVote={subtractVote}             
-             />
+      <Posts 
+        orderArray={orderArray}
+        addVote={addVote}
+        subtractVote={subtractVote}/>
     </section>
 
   </div>                                    
