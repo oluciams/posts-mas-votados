@@ -43,13 +43,12 @@ export const Home = () => {
   const orderFalling = ()=>{
     let newOrderDes= [...orderArray].sort((b,a)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
       setOrderArray(newOrderDes)
-      setbuttonToggle(false)    
-
+      setbuttonToggle(false)
   }
   
   useEffect(() => {
-		const organizeAsc = [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
-      setOrderArray(organizeAsc)
+    const organizeAsc = [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
+    setOrderArray(organizeAsc)
   },  []);  
    
   return (    
