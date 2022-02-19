@@ -8,7 +8,14 @@ export const Posts = ({orderArray, addVote, subtractVote}) => {
     return (
 			<>
 				{ 
-					orderArray.map(({ id, title, description, votes, writer_avatar_url, post_image_url, url}) =>  
+					orderArray.map(({ id,
+						 title, 
+						 description,
+						 votes,
+						 writer_avatar_url,
+						 post_image_url,
+						 url
+					}) =>  
 						<CardPost
 							key={id}              
 							cardTitle={title}

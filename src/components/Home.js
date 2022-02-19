@@ -49,8 +49,8 @@ export const Home = () => {
   
   useEffect(() => {
 		const organizeAsc = [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
-		  setOrderArray(organizeAsc)		
-	},  []);  
+      setOrderArray(organizeAsc)
+  },  []);  
    
   return (    
     
