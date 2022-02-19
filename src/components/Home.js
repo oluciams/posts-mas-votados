@@ -18,12 +18,10 @@ export const Home = () => {
      }) 
 
      setOrderArray(newCopyOrderArray)
-     buttonToggle ? orderUpward() : orderFalling()    
-	}
-
-
-
-	const subtractVote = (id) => {
+     buttonToggle ? orderUpward() : orderFalling()
+  }
+  
+  const subtractVote = (id) => {
     let copyOrderArray = [...orderArray]
     let newCopyOrderArray = copyOrderArray.map((post)=>{
       if(post.id===id){
@@ -34,8 +32,7 @@ export const Home = () => {
 
     setOrderArray(newCopyOrderArray)
     buttonToggle ? orderUpward() : orderFalling()
-   
-	}
+  }
 
   const orderUpward = ()=>{
     let newOrderAsc= [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
@@ -49,8 +46,8 @@ export const Home = () => {
       setbuttonToggle(false)    
 
   }
-
-	useEffect(() => {
+  
+  useEffect(() => {
 		const organizeAsc = [...orderArray].sort((a,b)=> (a.votes > b.votes ? 1 : a.votes < b.votes ? -1 : 0))
 		  setOrderArray(organizeAsc)		
 	},  []);  
@@ -92,8 +89,7 @@ export const Home = () => {
           subtractVote={subtractVote}/>
       </section>
 
-    </div>                                    
-      
+    </div>   
   )
 }
 
