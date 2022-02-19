@@ -1,17 +1,16 @@
 import React from 'react';
 
 
-export const CardPost = ({         
-  
-  cardTitle,
-  cardDescription,
-  cardWriter,
-  cardVotes,
-  cardImage,
-  cardUrl,
-  id,
-  addVote,
-  subtractVote
+  export const CardPost = ({    
+    cardTitle,
+    cardDescription,
+    cardWriter,
+    cardVotes,
+    cardImage,
+    cardUrl,
+    id,
+    addVote,
+    subtractVote
   })=> {
     
   return (
